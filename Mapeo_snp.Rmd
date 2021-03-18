@@ -1,0 +1,17 @@
+---
+title: "Mapear un SNP..."
+subtitle: "Seminario semanal LBSyMT"
+author: "Erick Cuevas"
+date: "3/16/2021"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: 
+      collapsed: false
+      smooth_scroll: true
+    number_section: true
+    theme: "spacelab"
+---
+
+
