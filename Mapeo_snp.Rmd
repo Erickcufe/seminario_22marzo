@@ -222,6 +222,19 @@ ggplot(dat,aes(x=celltype, y=Expr, fill=celltype)) +
   ggtitle(paste0("Cellular expression profiles of AD risk genes"))
 ```
 
+# Enriquecimiento funcional
 
+```{r, message=FALSE}
+library(hypeR)
+library(tidyverse)
+library(reactable)
+genesets <- msigdb_gsets("Homo sapiens", "C2", "CP:REACTOME", clean=TRUE)
+print(genesets)
+genes <- read.table("datos_newAnalysis/ADgenes.txt")
+signatures <- genes$V1
+mhyp <- hypeR(signatures, genesets, test="hypergeometric", background=360000)
+hyp_dots(mhyp, merge=TRUE, fdr=0.01, top=100, title="Co-expression Modules")
+hyp_emap(mhyp)
 
+```
 
